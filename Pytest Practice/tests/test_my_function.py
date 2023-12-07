@@ -1,7 +1,7 @@
 import pytest
 from source import my_functions
 class test_functions():
-    
+
     def test_add():
         result = my_functions.add(1,4)
         assert result == 5
@@ -18,7 +18,7 @@ class test_functions():
         result = my_functions.divide(12,3)
         assert result == 4
 
-def test_divide_by_zero():
-    with pytest.raises(ValueError):
-        result = my_functions.divide(10,0)
+    def test_divide_by_zero():
+        with pytest.raises(ValueError):
+            result = my_functions.divide(10,0)
     
