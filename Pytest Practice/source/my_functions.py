@@ -27,5 +27,5 @@ class Divide_function():
     
     def divide(self):
         if self.num_2 == 0:
-            raise(ValueError)
+            raise ValueError("Cannot divide by zero")
         return self.num_1/self.num_2

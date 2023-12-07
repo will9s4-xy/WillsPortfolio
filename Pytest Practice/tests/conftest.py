@@ -1,7 +1,7 @@
 import pytest
 from source import shapes
 
-
+#Fixtures for testing shapes with same or different:
 @pytest.fixture
 def my_circle():
     return shapes.Circle(10)
@@ -65,3 +65,21 @@ def same_rectangle():
 @pytest.fixture
 def different_rectangle():
     return shapes.Rectangle(1, 2)
+
+# Fixtures for My Functions testing:
+
+@pytest.fixture
+def numbers_for_addition():
+    return [(1, 4), (5, 7), (10, 20)]
+
+@pytest.fixture
+def numbers_for_subtraction():
+    return [(10, 5), (8, 3), (15, 8)]
+
+@pytest.fixture
+def numbers_for_multiplication():
+    return [(2, 3), (4, 5), (6, 2)]
+
+@pytest.fixture
+def numbers_for_division():
+    return [(12, 3), (20, 4), (30, 5)]
