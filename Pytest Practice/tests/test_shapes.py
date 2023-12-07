@@ -2,82 +2,127 @@ import pytest
 import math
 from source import shapes
 
+
 class Test_Circle:
-
     def setup_method(self, method):
         print(f"Setting up {method}")
-        self.circle = shapes.Circle(10)
 
-    def test_area(self):
-        result = self.circle.area()
-        expected_result = math.pi * self.circle.radius ** 2
-        assert result == expected_result       
-    
-    def test_perimeter(self):
-        result = self.circle.perimeter()
-        expected_Result = 2 * math.pi * self.circle.radius
+    def test_area(self, my_circle):
+        result = my_circle.area()
+        expected_result = math.pi * my_circle.radius ** 2
+        assert result == expected_result
+
+    def test_perimeter(self, my_circle):
+        result = my_circle.perimeter()
+        expected_Result = 2 * math.pi * my_circle.radius
         assert result == expected_Result
+    
+    def test_similar_circle(self, my_circle, same_circle):
+        assert my_circle == same_circle
+    
+    def test_different_circle(self, my_circle, different_circle):
+        assert my_circle != different_circle
 
     def teardown_method(self, method):
         print(f"Tearing down {method}")
-        del self.circle
 
-
-class Test_Square():
+class Test_Square:
     def setup_method(self, method):
         print(f"Setting up {method}")
-        self.square = shapes.Square(4)
+        
     
-    def test_area(self):
-        result = self.square.area()
-        expected_result = self.square.side ** 2
-        assert result == expected_result       
-    
-    def test_perimeter(self):
-        result = self.square.perimeter()
-        expected_Result = 4 * self.square.side
+    def test_area(self, my_square):
+        result = my_square.area()
+        expected_result = my_square.side ** 2
+        assert result == expected_result
+
+    def test_perimeter(self, my_square):
+        result = my_square.perimeter()
+        expected_Result = 4 * my_square.side
         assert result == expected_Result
+    
+    def test_same_square(self, my_square, same_square):
+        assert my_square == same_square
+    
+    def test_different_square(self, my_square, different_square):
+        assert my_square != different_square
 
     def teardown_method(self, method):
         print(f"Tearing down {method}")
-        del self.square
+        # No need to delete the square instance
 
-class Test_Equalateral_Triangle():
+class Test_Equalateral_Triangle:
     def setup_method(self, method):
         print(f"Setting up {method}")
-        self.equal_triangle = shapes.Equalateral_Triangle(7)
+        
 
-    def test_area(self):
-        result = self.equal_triangle.area()
-        expected_result = (math.sqrt(3)/4) * self.equal_triangle.side ** 2
-        assert result == expected_result       
+    def test_area(self, my_equal_triangle):
+        result = my_equal_triangle.area()
+        expected_result = (math.sqrt(3)/4) * my_equal_triangle.side ** 2
+        assert result == expected_result
+
+    def test_perimeter(self, my_equal_triangle):
+        result = my_equal_triangle.perimeter()
+        expected_result = 3 * my_equal_triangle.side
+        assert result == expected_result
     
-    def test_perimeter(self):
-        result = self.equal_triangle.perimeter()
-        expected_Result = 3 * self.equal_triangle.side
-        assert result == expected_Result
+    def test_same_equal_triangle(self, my_equal_triangle, same_equal_triangle):
+        assert my_equal_triangle == same_equal_triangle
+    
+    def test_different_equal_triangle(self, my_equal_triangle, different_equal_triangle):
+        assert my_equal_triangle != different_equal_triangle
 
     def teardown_method(self, method):
         print(f"Tearing down {method}")
-        del self.equal_triangle
-    
-class Test_Scalene_Triangle():
+        # No need to delete the equal_triangle instance
 
+class Test_Scalene_Triangle:
     def setup_method(self, method):
         print(f"Setting up {method}")
-        self.Isosceles_Scalene_Triangle = shapes.Isosceles_Scalene_Triangle(12,11,23)
+        
 
-    def test_area(self):
-        semi_p = ((self.Isosceles_Scalene_Triangle.side_1 + self.Isosceles_Scalene_Triangle.side_2 + self.Isosceles_Scalene_Triangle.side_3)/2)
-        result = self.Isosceles_Scalene_Triangle.area()
-        expected_result = math.sqrt(semi_p * (semi_p - self.Isosceles_Scalene_Triangle.side_1) * (semi_p - self.Isosceles_Scalene_Triangle.side_2) * (semi_p -self.Isosceles_Scalene_Triangle.side_3))
-        assert result == expected_result       
-    
-    def test_perimeter(self):
-        result = self.Isosceles_Scalene_Triangle.perimeter()
-        expected_Result = self.Isosceles_Scalene_Triangle.side_1 + self.Isosceles_Scalene_Triangle.side_2 + self.Isosceles_Scalene_Triangle.side_3
+    def test_area(self, my_scalene_triangle):
+        semi_p = ((my_scalene_triangle.side_1 + my_scalene_triangle.side_2 + my_scalene_triangle.side_3)/2)
+
+        result = my_scalene_triangle.area()
+        expected_result = math.sqrt(semi_p * (semi_p - my_scalene_triangle.side_1) * (semi_p - my_scalene_triangle.side_2) * (semi_p - my_scalene_triangle.side_3))
+        assert result == expected_result
+
+    def test_perimeter(self, my_scalene_triangle):
+        result = my_scalene_triangle.perimeter()
+        expected_Result = my_scalene_triangle.side_1 + my_scalene_triangle.side_2 + my_scalene_triangle.side_3
         assert result == expected_Result
+    
+    def test_same_scalene_triangle(self, my_scalene_triangle, same_scalene_triangle):
+        assert my_scalene_triangle == same_scalene_triangle
+    
+    def test_different_scalene_triangle(self, my_scalene_triangle, different_scalene_triangle):
+        assert my_scalene_triangle != different_scalene_triangle
+
 
     def teardown_method(self, method):
         print(f"Tearing down {method}")
-        del self.Isosceles_Scalene_Triangle
+        # No need to delete the scalene_triangle instance
+class Test_Rectangle():
+
+    def setup_method(self, method):
+        print(f"Setting up {method}")
+
+    def test_area(self, my_rectangle):
+        result = my_rectangle.area()
+        expected_result = my_rectangle.length * my_rectangle.width
+        assert result == expected_result
+
+    def test_perimeter(self, my_rectangle):
+        result = my_rectangle.perimeter()
+        expected_result = (my_rectangle.length * 2) + (my_rectangle.width * 2)
+        assert result == expected_result
+    
+    def test_same_rectangle(self, my_rectangle, same_rectangle):
+        assert my_rectangle == same_rectangle
+    
+    def test_different_rectangle(self, my_rectangle, different_rectangle):
+        assert my_rectangle != different_rectangle
+    
+    def teardown_method(self, method):
+        print(f"Tearing down {method}")
