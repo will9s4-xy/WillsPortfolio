@@ -1,3 +1,4 @@
+
 database = {
     1: 'Alex',
     2: 'Bob',
