@@ -2,21 +2,10 @@ import pytest
 from source.day1 import process_calibrations
 
 def test_process_calibrations():
-    """
-    Test the process_calibrations function.
-
-    Args:
-        File Test
-    
-    Returns:
-        True or False depending on the test run
-    """
-    # Given
+    """Test for the process_calibrations function."""
+    # Arrange
     expected_result = 54632
-
-    # When
+    # Act
     result = process_calibrations("source/calibrations.txt")
-
-    # Then
+    # Assert
     assert result == expected_result
-
