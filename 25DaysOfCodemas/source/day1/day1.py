@@ -28,8 +28,10 @@ def process_calibrations(calibrations_file):
     total_sum = sum(expected_result)
     return total_sum
 
-
 if __name__ == "__main__":
     calibrations_file = "calibrations.txt"
     total_sum = process_calibrations(calibrations_file)
     print("Total Sum:", total_sum)
+
+    
+ 
