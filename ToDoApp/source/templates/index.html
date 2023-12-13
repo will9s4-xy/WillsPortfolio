@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+</head>
+<body>
+    <h1>ToDo List</h1>
+    <form action="{{ url_for('add_task') }}" method="post">
+        <label for="task">New Task:</label>
+        <input type="text" id="task" name="task" required>
+        <button type="submit">Add Task</button>
+    </form>
+    <ul>
+        {% for task in tasks %}
+            <li>
+                {{ task[1] }}
+                {% if not task[2] %}
+                [<a href="{{ url_for('complete_task', task_id=task[0]) }}">Complete</a>]
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

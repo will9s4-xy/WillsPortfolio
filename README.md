@@ -10,8 +10,8 @@ Projects Table of contents:
 - Daily Journal Mood Emailer
 - Flashcard App
 - Recipie Finder
-- AI Chatbot
-- Discord bot
-- Web Scrapper
+- AI Chatbot [based off of a course]
+- Discord bot [based off of a course]
+- Web Scrapper [based off of a course]
 - Typing Speed test
 
