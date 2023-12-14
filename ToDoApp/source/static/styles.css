@@ -1,44 +1,53 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
+/* Add your styling here */
+.container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    width: 80%;
+    margin: 0 auto;
 }
 
-.container {
+.center-form {
     text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-input, button {
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input, select, button {
     margin-bottom: 10px;
     padding: 8px;
+    width: 100%;
 }
 
 ul {
     list-style-type: none;
     padding: 0;
+    width: 100%;
 }
 
 li {
     background-color: #e6e6e6;
-    padding: 10px;
-    margin-bottom: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.delete-btn {
+.delete-btn, .edit-btn {
+    padding: 8px; /* Adjusted padding for both buttons */
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    color: #ff0000;
-    font-weight: bold;
-    margin-left: 10px;
 }
+
+/* Other styling adjustments... */
